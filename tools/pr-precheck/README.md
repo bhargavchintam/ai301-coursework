@@ -1,1 +1,3 @@
 Unit 4 uploads your installed `pr-precheck` folder here (the current files from `~/.claude/skills/pr-precheck/`).
+
+Files: `SKILL.md` (the frame), `rubric.md` (checks and verdict rule), `procedure.md` (read order, gathering moves, execution, verdict assembly), `references/evidence-guide.md` (where each evidence family lives), `voice-guide.md` (carried over from Units 2 and 3, extended for the PR register), plus the staff-authored `CONTRACT.md` and `scope.md` (repo line filled with `codepath/pathreview-ai301-fa26-s3`). This copy matches the installed copy the eval run in `beat-1-sandbox/unit-4/eval-run.txt` fingerprints.
