@@ -7,10 +7,9 @@ the repository is not read. **Keep every section header below under its exact na
 format criteria grade exactly that. Your course repo link is the whole submission: no tool
 files and no evidence uploads are part of Assignment 5.
 
-**Contribution Number:** [1]
-**Student:** [Student name]
-**GitHub Username:** [your GitHub username, exactly as it appears on your profile - no @, no
-profile URL. Your comments upstream are identified by this name.]
+**Contribution Number:** 1
+**Student:** Bhargav Chintam
+**GitHub Username:** bhargavchintam
 **Issue:** [GitHub issue link]
 **Pull Request:** [GitHub PR link, once opened]
 
@@ -55,10 +54,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Installed the scout over issue-select, wrote a four-query search strategy, ran two scans and graded my Issue Selection picks (2026-10-13)**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I installed the Unit 5 overlay on my issue-select skill (now `issue-scout`), extended my fit profile from two sentences to five so each `gh search issues` query could trace to one, and wrote four queries plus ranking filters that read only the fields search returns (assignees, issue number, title, labels, comment count, dates, author association). The first scan rejected all five candidates, and the misses were mine, not the rubric's: my "1 to 5 comments first" ordering had pulled three claimed issues to the top, a four-star notes repository slipped past my repo-size line, and `-linked:pr` cannot see cross-referenced PRs. I changed the ordering to 0 comments first with `createdAt` as the tie-break, added repository-name words to the drop list and a one-candidate-per-repository cap, and the second scan accepted one issue (spack/spack-packages #5400) while showing that one query crowded out the data-processing ones, so I added a round-robin fill across queries that no scan has verified yet. Direct grading of my three site picks gave two accepts (emfcamp/Website #1779, spack/spack-packages #5400) and one reject (music21 #1144, no accepted approach), and because `responds-fast` came back unclear every time, I added a `gh` recipe for the maintainer first-response sample to the evidence guide; every change is a dated line in the installed skill's `scan-notes.md`.
 
 **Unit 6: [one line on the tool work]**
 
