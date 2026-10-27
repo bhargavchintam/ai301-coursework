@@ -20,7 +20,7 @@ is far easier to write down as it happens than to reconstruct in the last weeken
 Contribution Number stays `[1]` unless you make more than one contribution this term; it
 just numbers them.
 
-A second, ungraded contribution (emfcamp/Website #1779, PR https://github.com/emfcamp/Website/pull/2391, opened 2026-10-27) is recorded in `contribution-story-2.md` beside this file.
+A second, ungraded contribution (emfcamp/Website #1779, PR https://github.com/emfcamp/Website/pull/2391, opened and closed by the maintainer as already fixed on 2026-10-27) is recorded in `contribution-story-2.md` beside this file.
 
 ---
 
@@ -280,6 +280,10 @@ Checked the Unit 7 pages line by line (class is 2026-10-28): the package, hook, 
 **2026-10-27 (later)**
 
 Installed the Unit 8 PR-monitor at `~/.claude/pr-monitor/` (three copy commands, no hook), ran the free state canary from the clone (found #7083, QUIET 11 days), sampled the repo's review rhythm with `gh` GraphQL (merged repeat-contributor PRs versus open first-timer PRs), wrote the playbook from those numbers, and ran the monitor in anger: it drafted a wait note citing my own 21-day rule and the date it is met. Logged in `~/.claude/pr-monitor/monitor-log.md`; the canary and run transcripts are in `unit-8-work/`.
+
+**2026-10-27 (evening)**
+
+The second contribution ended the same day it opened: marksteward closed emfcamp/Website #1779 and PR #2391 as already fixed in March (commit bb70629). The PR-monitor, run on the closed PR, classified it as my walk-away case and drafted the close-out; I posted a one-sentence version through the guard with Bhargav's yes and released the Issue Selection site hold. Lesson added to the scout's patch list: read the commit log for the function an issue names, not only the thread, before claiming. Full record in `contribution-story-2.md`.
 
 **Toolkit**
 
