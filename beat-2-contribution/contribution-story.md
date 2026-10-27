@@ -20,6 +20,8 @@ is far easier to write down as it happens than to reconstruct in the last weeken
 Contribution Number stays `[1]` unless you make more than one contribution this term; it
 just numbers them.
 
+A second, ungraded contribution (emfcamp/Website #1779, PR https://github.com/emfcamp/Website/pull/2391, opened 2026-10-27) is recorded in `contribution-story-2.md` beside this file.
+
 ---
 
 ## Toolkit
