@@ -23,9 +23,9 @@ The claim draft passed the guard on the first run, and repro-check (claim-only m
 
 `install.py --repo` placed the manifest template for this clone. Gate run 1 stopped on my fourth manifest row: the command used shell pipes, and a markdown table splits on `|`, so the gate ran half a command. Run 2 passed on the manifest and my rubric, with two voice notes (the Before and After blocks lacked their command line; the lint result was paraphrased) and one evidence gap (the docker suite was still a placeholder). Run 3 passed with one borderline note on stating the maintainer's reasoning as fact, which I reworded. The PR opened through the guard after the third pass.
 
-### Unit 8: the monitor is installed; this PR's first `--state` read comes once there is quiet to measure
+### Unit 8: the monitor read the closed PR and drafted the close-out, which I revised and posted
 
-The monitor was installed earlier the same day for the first contribution; its playbook thresholds (21 days before a first nudge, one nudge ever, 90-day walk-away) carry over to this PR unchanged, and the daily check reports both PRs.
+The maintainer closed the issue and the PR an hour after the claim (already fixed in March, commit bb70629; typing keeps `year` an `int` and pathlib does the join). The monitor, run from the clone on the branch, read the state as CLOSED, classified it as my walk-away case "the issue gets fixed another way", and drafted a two-sentence close-out via the review-response form with notes to name the commit, keep it short and not compare fixes. I rewrote it in my own words (one sentence), the guard passed it, and it went up on the PR with Bhargav's yes. Then I released the Issue Selection site hold. What the monitor got right: no nudge, no argument, nothing beyond recording the end. What it could not see: the linked issue comment with the commit, which it asked me to fill in by hand.
 
 ---
 
@@ -197,10 +197,10 @@ Read the repo through `gh api` before cloning: CONTRIBUTING.md is six lines abou
 
 **Maintainer Feedback:**
 
-- 2026-10-27: none yet; opened at 02:14 PT, no checks reported on the branch yet.
-- 2026-10-27: nothing to address yet.
+- 2026-10-27 (09:24 UTC, about an hour after the claim): marksteward on the issue: "unfortunately this was already fixed in March with bb7062943ad45d14491d52b934eab763bf46d479", with links showing the function now relies on type checking to keep `year` an integer and on pathlib for the join, "This means both your check and test are redundant, so I'll close the PR too, sorry." He closed the issue as completed and the PR with "Already fixed, see comment".
+- 2026-10-27 (14:45 PT): I replied on the PR, one sentence, thanking him for the quick reply and the pointer and agreeing it stays closed (https://github.com/emfcamp/Website/pull/2391#issuecomment-6454380001). Released the site hold the same hour.
 
-**Status:** Awaiting review (opened 2026-10-27, regular PR, one commit, 2 files, +47/-0).
+**Status:** Closed by the maintainer on 2026-10-27, not merged: the issue had been fixed in March 2026 by commit bb70629 and the issue text was stale. The claim, the reproduction and the PR all happened against the current `main`, where the string case still reproduces; the maintainers consider the type check sufficient, and that is their call.
 
 **Toolkit**
 - Tool: the ship-gate wrapping my pr-precheck and manifest, three runs through the manual doorway, then the guard on the PR body before `gh pr create`.
@@ -218,11 +218,11 @@ How `pathlib.resolve()` with a `parents` membership check bounds a path to a roo
 
 ### Challenges Overcome
 
-Two self-inflicted ones: a fork that landed under a different name because my own account already had a `Website` repo (the first clone pulled the wrong repository, caught by the commit log before any work), and a manifest row broken by shell pipes inside a markdown table (caught by the gate's first stop). Neither cost more than a few minutes because the tools quoted exactly what was wrong.
+The real one was that the issue was stale: fixed seven months earlier by a commit that never referenced it, so the thread looked open and my reproduction on `main` still showed the string case. The maintainer's close was quick, clear and polite, and the ending cost one short reply. Two self-inflicted ones: a fork that landed under a different name because my own account already had a `Website` repo (the first clone pulled the wrong repository, caught by the commit log before any work), and a manifest row broken by shell pipes inside a markdown table (caught by the gate's first stop). Neither cost more than a few minutes because the tools quoted exactly what was wrong.
 
 ### What I'd Do Differently Next Time
 
-Check `gh repo view` on the fork name right after forking, before cloning. Write manifest commands with no `|` from the start. And run plan-check on the plan before building even when the plan and the build happen in the same hour; the first contribution taught that order and I bent it here because the change was small.
+Check the issue against the repo's history before claiming, not only against the code: `git log -S archive_file --oneline` or a look at the function's blame would have shown the March commit "Switch archive_file to use pathlib and make it more defensive" and told me the issue was stale before I spent the day; my scout's `no-failed-attempts` and `unclaimed` checks read the thread and the PRs, but nothing in it reads the commit log for the function the issue names, and that is a patch worth making. Check `gh repo view` on the fork name right after forking, before cloning. Write manifest commands with no `|` from the start. And run plan-check on the plan before building even when the plan and the build happen in the same hour; the first contribution taught that order and I bent it here because the change was small.
 
 ---
 
