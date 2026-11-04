@@ -72,6 +72,8 @@ The guard went in as a hook on Bash in `~/.claude/settings.json`, the voice guid
 
 The install was a folder copy with no hook, since the monitor is invoked rather than latched, and the free `--state` canary found PR #7083 from my branch on the first try: opened 11 days earlier, checks 1 pending and 1 passing, mergeable, review required, zero comments, state QUIET. Before writing thresholds I measured the repo instead of guessing: the last 25 merged package PRs from repeat contributors got a first human response in a median of 0.4 days and merged in 1.9, but of 17 open package PRs from first-time contributors in the last two weeks, 9 had no human reply yet (oldest 14.5 days), and 42 of 75 open repeat-contributor PRs were silent too. So the playbook says 21 days of quiet before a first nudge is on the table, 14 days after an answered review round, one nudge per PR ever and only with something new to bring, and a 90-day walk-away with a dated close note. The full run (one Sonnet call) folded that in and drafted "No nudge. Wait.": it quoted my 21-day rule, named 2026-11-05 as the day it is met, and flagged that the pending check (the GitLab pipeline waiting on maintainer approval) could be the one new thing a nudge brings. Nothing posted; the draft stays a draft. What fought me: nothing in the tool; the hard part was resisting the urge to write a threshold from feeling instead of from the sample. Earlier the same day a retroactive ship-gate run surfaced a hidden earlier comment on the issue from another contributor, and I answered it on the issue (dated entry below), which is the one thread move made this unit.
 
+Second run, 2026-11-04, after the state changed: on 2026-10-28, thirteen days in, I asked j-ogas and reidpr on the PR to approve the `ci` workflow run (first-time contributors' runs need a maintainer's approval), and j-ogas approved the PR the same evening with "LGTM, thanks, and sorry for the delayed response". The `--state` canary now read FEEDBACK-IN with the approval as the latest item, 1 check pending and 1 passing, review still required, merge state blocked. The full run drafted "No reply": an approval asks for nothing, a thank-you would name no specific catch, and it set the next check for 2026-11-18. It also pointed out, correctly, that my Oct 28 request came well before my own 21-day threshold and reads like the one nudge my playbook allows, so it is spent; the playbook says one per PR, ever, and I am holding to that. What I would change in the monitor: it cannot tell which check is pending or whether one approval satisfies the repo's review rule, so that reading stays manual.
+
 ---
 
 ## Why I Chose This Issue
@@ -285,6 +287,14 @@ Installed the Unit 8 PR-monitor at `~/.claude/pr-monitor/` (three copy commands,
 
 The second contribution ended the same day it opened: marksteward closed emfcamp/Website #1779 and PR #2391 as already fixed in March (commit bb70629). The PR-monitor, run on the closed PR, classified it as my walk-away case and drafted the close-out; I posted a one-sentence version through the guard with Bhargav's yes and released the Issue Selection site hold. Lesson added to the scout's patch list: read the commit log for the function an issue names, not only the thread, before claiming. Full record in `contribution-story-2.md`.
 
+**2026-10-28**
+
+Asked j-ogas and reidpr on PR #7083 to approve the waiting `ci` workflow run (it showed `action_required` since Oct 15). j-ogas approved the PR at 17:42 UTC: "LGTM, thanks, and sorry for the delayed response." The run itself still needs approval and reidpr is still a requested reviewer.
+
+**2026-11-04**
+
+PR-monitor run on the new state (FEEDBACK-IN): drafted move is to wait; next check 2026-11-18. Updated this story and resubmitted Assignment 5.
+
 **Toolkit**
 
 - Tool: the voice-guard's `guard-log.md` and the ship-gate's `gate-log.md`, which timestamped every stop and pass and are what this log was written from.
@@ -305,8 +315,10 @@ The second contribution ended the same day it opened: marksteward closed emfcamp
 - 2026-10-15: none yet; the PR was opened at 02:47 PT and CI was still running.
 - 2026-10-15: nothing to address yet.
 - 2026-10-27: still no maintainer comment or review on the PR (spackbot requested j-ogas and reidpr on Oct 15). On the issue, a comment from DCchoudhury15 dated Oct 7 asking to work on it became visible; it was hidden when I claimed (the Oct 14 API check returned 0 comments). I replied on the issue the same day, pointed at this PR, and offered to close it if the maintainers prefer the other contributor take it.
+- 2026-10-28: j-ogas approved the PR ("LGTM, thanks, and sorry for the delayed response"), hours after I asked on the thread for the `ci` workflow run to be approved. Nothing to change. The repo still shows review required and the merge blocked, with reidpr requested and the `ci` run not yet approved to start; DCchoudhury15 has not replied on the issue.
+- 2026-11-04: no further activity. The monitor's drafted move was to wait.
 
-**Status:** Awaiting review (opened 2026-10-15 as a regular, non-draft PR; one commit, 1 file, +5/-1).
+**Status:** Approved by one maintainer (j-ogas, 2026-10-28); waiting for the `ci` run to be approved and for the merge (opened 2026-10-15 as a regular, non-draft PR; one commit, 1 file, +5/-1, no conflicts with develop as of 2026-11-04).
 
 **Toolkit**
 
@@ -330,6 +342,8 @@ The fix could not be tested where I write code: charliecloud carries `conflicts(
 **What I'd Do Differently Next Time**
 
 Run the before evidence for every case in the test plan up front, including the branch version, instead of adding `main` after a reviewer tool asked. Write the claim without a timeframe; "this week" was a promise my own voice guide's Right example contained, which is why the guard passed it, and the rule now names timeframes with a pair taken from my own comment (fixed 2026-10-16). Put every check into one script from the start and run it where the clone lives, instead of hand-running commands in a container and copying the output across. And read the repo's review skill (`.github/skills/pr-review.md`) before writing the description, not after; it says exactly what the reviewers will look for, and the Why section was rewritten once because I wrote it from the issue alone.
+
+And hold to my own staleness threshold once it is written: I asked for the CI run to be approved on day 13, eight days before the 21-day line my playbook set from the repo's measured rhythm, and only afterwards saw that the monitor counts it as my one nudge. It happened to land the same day as the approval, which does not make it right; the threshold was written to stop exactly that kind of early ask.
 
 ---
 
