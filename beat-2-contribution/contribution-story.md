@@ -293,7 +293,11 @@ Asked j-ogas and reidpr on PR #7083 to approve the waiting `ci` workflow run (it
 
 **2026-11-04**
 
-PR-monitor run on the new state (FEEDBACK-IN): drafted move is to wait; next check 2026-11-18. Updated this story and resubmitted Assignment 5.
+PR-monitor run on the new state (FEEDBACK-IN): drafted move is to wait; next check 2026-11-18. Updated this story.
+
+**2026-11-11**
+
+PR #7083 merged by cmelone the evening before (PT); issue #5400 closed. Recorded here; nothing to post beyond what is already on the thread.
 
 **Toolkit**
 
@@ -317,8 +321,9 @@ PR-monitor run on the new state (FEEDBACK-IN): drafted move is to wait; next che
 - 2026-10-27: still no maintainer comment or review on the PR (spackbot requested j-ogas and reidpr on Oct 15). On the issue, a comment from DCchoudhury15 dated Oct 7 asking to work on it became visible; it was hidden when I claimed (the Oct 14 API check returned 0 comments). I replied on the issue the same day, pointed at this PR, and offered to close it if the maintainers prefer the other contributor take it.
 - 2026-10-28: j-ogas approved the PR ("LGTM, thanks, and sorry for the delayed response"), hours after I asked on the thread for the `ci` workflow run to be approved. Nothing to change. The repo still shows review required and the merge blocked, with reidpr requested and the `ci` run not yet approved to start; DCchoudhury15 has not replied on the issue.
 - 2026-11-04: no further activity. The monitor's drafted move was to wait.
+- 2026-11-10 (PT): cmelone approved at 17:01 and merged at 17:37; merge commit 4ec61c9e on develop, "charliecloud: require squashfuse 0.4.0 or newer for 0.44 and later (#7083)". Issue #5400 closed by the merge. No change was requested at any point.
 
-**Status:** Approved by one maintainer (j-ogas, 2026-10-28); waiting for the `ci` run to be approved and for the merge (opened 2026-10-15 as a regular, non-draft PR; one commit, 1 file, +5/-1, no conflicts with develop as of 2026-11-04).
+**Status:** Merged 2026-11-10 PT by cmelone (opened 2026-10-15 as a regular, non-draft PR; one commit, 1 file, +5/-1; approvals from j-ogas on 2026-10-28 and cmelone on 2026-11-10).
 
 **Toolkit**
 
